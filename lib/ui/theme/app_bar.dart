@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:my_fit_evolution/ui/theme/app_theme.dart';
 
 class MyFitEvolutionAppBar extends StatelessWidget implements PreferredSizeWidget {
-
   final bool showReturnButton;
 
   const MyFitEvolutionAppBar({
@@ -16,14 +15,15 @@ class MyFitEvolutionAppBar extends StatelessWidget implements PreferredSizeWidge
       backgroundColor: AppTheme.primary400,
       automaticallyImplyLeading: true,
       titleSpacing: 5,
-      leading: (showReturnButton) ? IconButton(
-        icon: const Icon(Icons.arrow_back_ios),
-        iconSize: 16,
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-      ) : const SizedBox.shrink(),
-
+      leading: (showReturnButton)
+          ? IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              iconSize: 16,
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            )
+          : const SizedBox.shrink(),
       title: Image.asset(
         './assets/images/splashBranding.png',
         height: 40,
