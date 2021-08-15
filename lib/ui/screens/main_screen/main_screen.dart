@@ -54,6 +54,36 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             Container(
+              margin: const EdgeInsets.only(top: 10, left: 10),
+              child: const Text(
+                'Next visit: 18/08/1990',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 10, left: 10),
+              child: const Text(
+                'Place: Carrer Johannes Kepler, 42, 08191 Rubí, Barcelona, España ',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 10, left: 10),
+              child: const Text(
+                'Objective: 78KG',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Container(
               margin: const EdgeInsetsDirectional.only(top: 10),
               child: GridView.builder(
                 shrinkWrap: true,
