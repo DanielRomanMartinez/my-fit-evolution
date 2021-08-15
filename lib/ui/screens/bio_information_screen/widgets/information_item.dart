@@ -1,49 +1,52 @@
 part of '../bio_information_screen.dart';
 
 class InformationItem extends StatelessWidget {
-
   final IconData icon;
-  final String name;
   final String value;
-  final bool background;
+  final bool isBetterPerformance;
 
   const InformationItem({
     required this.icon,
-    required this.name,
     required this.value,
-    required this.background,
+    required this.isBetterPerformance,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: background ? Colors.lightGreen : Colors.lightBlue,
+      margin: const EdgeInsets.all(8.0),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        color: Colors.amberAccent,
+      ),
       child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Icon(
-              icon,
-              color: Colors.blue,
-            ),
-          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 15),
-              child: Text(
-                name,
-                style: const TextStyle(
-                  color: Colors.black,
+              child: Center(
+                child: Icon(
+                  icon,
+                  color: Colors.blue,
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: Text(
-              value,
-              style: const TextStyle(
-                color: Colors.black,
+          Container(
+            padding: const EdgeInsets.only(right: 10, left: 10),
+            decoration: BoxDecoration(
+              color: isBetterPerformance ? Colors.lightGreen : Colors.redAccent,
+              borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(8),
+                bottomRight: Radius.circular(8),
+              ),
+            ),
+            child: Center(
+              child: Text(
+                value,
+                style: const TextStyle(
+                  color: Colors.black,
+                ),
               ),
             ),
           ),
