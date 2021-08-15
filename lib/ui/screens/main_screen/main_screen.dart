@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_fit_evolution/ui/objects/main_screen/dashboard_info_box.dart';
-import 'package:my_fit_evolution/ui/screens/bio_information_screen/bio_information_screen.dart';
-import 'package:my_fit_evolution/ui/screens/dietary_pattern_screen/dietary_pattern_screen.dart';
-import 'package:my_fit_evolution/ui/screens/personal_records_screen/personal_records_screen.dart';
-import 'package:my_fit_evolution/ui/screens/training_pattern_screen/training_pattern_screen.dart';
 import 'package:my_fit_evolution/ui/theme/app_bar.dart';
+import 'package:my_fit_evolution/config.dart';
 
 part 'widgets/info_box.dart';
 
@@ -19,14 +16,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   late ScrollController _controller;
-
-  List<String> dashboardBoxes = [
-    BioInformationScreen.ROUTE,
-    DietaryPatternScreen.ROUTE,
-    TrainingPatternScreen.ROUTE,
-    PersonalRecordsScreen.ROUTE,
-
-  ];
 
   @override
   void initState() {
@@ -69,14 +58,14 @@ class _MainScreenState extends State<MainScreen> {
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: dashboardBoxes.length,
+                itemCount: Config.DASHBOARD_BOXES.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 1,
                   childAspectRatio: 2.5,
                 ),
                 itemBuilder: (context, index) => InfoBox(
                   dashboardInfoBox: DashboardInfoBox.fromBoxName(
-                    boxName: dashboardBoxes[index],
+                    boxName: Config.DASHBOARD_BOXES[index],
                   ),
                 ),
               ),
