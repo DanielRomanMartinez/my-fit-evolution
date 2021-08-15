@@ -34,7 +34,7 @@ class MyFitEvolutionAppBar extends StatelessWidget implements PreferredSizeWidge
           icon: const Icon(Icons.account_circle),
           iconSize: 28,
           onPressed: () {
-            print("Profile icon pressed");
+            print('Profile icon pressed');
           },
         ),
       ],

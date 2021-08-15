@@ -10,9 +10,21 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #Backend
+  freezed_annotation:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  ## Build Runner processes
+  build_runner:
+  injectable_generator: 1.4.1
+  freezed:
+  hive_generator:
+
+  ## Code analysis
+  very_good_analysis: ^2.3.0
 
 flutter:
   uses-material-design: true
